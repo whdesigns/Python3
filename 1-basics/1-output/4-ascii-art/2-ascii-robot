@@ -1,0 +1,19 @@
+# Display ascii art 
+print("Please enter a character for the eyes!")
+eye = input()
+
+
+
+print("##########")
+print("# " + eye + "  " + eye + " #") 
+print("     0    ")
+print("##########")
+print("##########>>>>>>>>>>")
+print("##########>>>>>>>>>>")
+print("@@@@@O@@@@")
+print("@@@@@@@@@@")
+print("x        x")
+print("x        x")
+print("x        x")
+print("x        x")
+print("VVVV     VVVVV")
