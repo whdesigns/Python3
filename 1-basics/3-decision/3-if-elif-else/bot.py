@@ -8,11 +8,11 @@ print("[d] to move right")
 direction = input()
 # Work out which direction move input
 if (direction == "w"):
-print("I am moving up!")
+ print("I am moving up!")
 elif (direction == "s"):
-print("I am moving down!")
+ print("I am moving down!")
 elif (direction == "a"):
-print("I am moving left!")
+ print("I am moving left!")
 elif (direction == "d"):
   print("I am moving right!")
 else: 
