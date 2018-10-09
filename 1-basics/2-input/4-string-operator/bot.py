@@ -8,7 +8,7 @@ energy_level = int(input())
 print("Please enter the shield level:")
 shield_level = int(input())
 
-print("lives:", "" * lives )
-print("Energy:", "" * energy_level)
-print("Shield:", "" * shield_level)
+print("lives:", "❤️ " * lives )
+print("Energy:", "💪🏽" * energy_level)
+print("Shield:", "🔴" * shield_level)
 
