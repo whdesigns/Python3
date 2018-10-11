@@ -1,6 +1,6 @@
-times = int(input("Enter a number:"))
-0,1,2,3,4
-for time in range(times):
-    print("Enter a number:")
-if time >=4:
-    print("Ok, I've stopped.")
+print("Please say a word:")
+word = input()
+length = len(word)
+
+for count in range(0, length, 1):
+  print(word)
