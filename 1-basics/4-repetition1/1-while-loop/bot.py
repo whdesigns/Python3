@@ -1,10 +1,25 @@
-NUM_FACES = 1
+max_robots = 10
 
-while NUM_FACES < 11: 
+print("Enter a number of robots:")
+num_robots = int(input())
+
+count = 0
+if (num_robots < max_robots):
+  while (count < num_robots):
     print("#########")
     print("#       #")
     print("# O   O #")
     print("|   V   |")
     print("|  ---  |")
     print("|_______|")
-    NUM_FACES += 1 
+    count = count + 1
+
+  else:
+    while(count < num_robots):
+      print("#########")
+      print("#       #")
+      print("# O   O #")
+      print("|   V   |")
+      print("|  ---  |")
+      print("|_______|")
+    count = count + 1
