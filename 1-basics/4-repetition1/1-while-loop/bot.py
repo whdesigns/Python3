@@ -1,9 +1,10 @@
-NUM_FACES = 10
+NUM_FACES = 1
 
-for count in range(0, NUM_FACES, 1):
+while NUM_FACES < 11: 
     print("#########")
     print("#       #")
     print("# O   O #")
     print("|   V   |")
     print("|  ---  |")
     print("|_______|")
+    NUM_FACES += 1 
