@@ -1,4 +1,5 @@
-user_number = int(input("Please enter a whole number:"))
+print("Please enter a whole number:")
+user_number = int(input())
 # I created a variable called user_number, which is equal to an integer, meaning it'll only accept whole numbers. I then used parentheses to include the input function, so the user will be able to enter a whole number of their choice. I then placed the question inside another set of parentheses and closed the code with the necessary number of parentheses e.g. 2.  
 
 if user_number% 2==0:
