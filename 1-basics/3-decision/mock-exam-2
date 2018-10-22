@@ -1,0 +1,9 @@
+user_number = int(input("Please enter a whole number:"))
+
+if (user_number% 3==0):
+
+  print("Is a multiple of 3")
+
+else:
+   
+  print("Is not a multiple of 3") 
