@@ -1,0 +1,13 @@
+print("How many zones must I cross?")
+
+user_number = int(input())
+
+print("Crossing zones....")
+
+for number in range(user_number, 0, -1):
+
+   print("...crossed zone",number)
+if (number == 1):
+    print("Crossed all zones. Jumanji!")
+
+
