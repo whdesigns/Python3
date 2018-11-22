@@ -30,22 +30,22 @@ class Gui(Tk):
         self.ambulance_image_label = Label()
         self.ambulance_image_label.pack(side=LEFT)
         self.ambulance_image_label.configure(image=self.ambulance_image,
-                                             height=200,
-                                             width=200)
+                                             height=60,
+                                             width=60)
 
     def add_bike_image_label(self):
         self.bike_image_label = Label()
         self.bike_image_label.pack(side=RIGHT)
         self.bike_image_label.configure(image=self.bike_image,
-                                             height=200,
-                                             width=200)
+                                             height=60,
+                                             width=60)
  
     def add_plane_image_label(self):
         self.plane_image_label = Label()
         self.plane_image_label.pack(side=RIGHT)
         self.plane_image_label.configure(image=self.plane_image,
-                                             height=200,
-                                             width=200)
+                                             height=60,
+                                             width=60)
  
 
  
