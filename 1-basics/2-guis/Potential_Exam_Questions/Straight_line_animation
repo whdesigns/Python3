@@ -1,0 +1,69 @@
+ def __init__(self):
+        super().__init__()
+        
+        # load resources
+        self.third_image = PhotoImage(file="person.gif")
+        self.house_image = PhotoImage(file="house.gif")
+         
+        # set window attributes
+        self.configure(height=500,
+                       width=500)
+
+        # set animation attributes
+        self.third_x_pos = 20
+        self.third_y_pos = 370
+        self.third_x_change = 40
+        self.num_ticks = 0
+        
+
+
+        
+        # add components
+        self.add_third_image_label()
+        self.add_house_image_label()
+        
+        # start the timer
+        self.tick()
+        
+    # the timer tick function
+    def tick(self):
+        self.third_x_pos = self.third_x_pos + self.third_x_change 
+        self.third_image_label.place(x=self.third_x_pos, 
+                                    y=self.third_y_pos)
+
+        #right
+        if self.third_x_pos <= 0:
+            self.third_x_change = -self.third_x_change
+
+
+        #left
+        if self.third_x_pos >= 455:
+            self.third_x_change = -self.third_x_change
+
+
+        self.after(100, self.tick)
+        
+
+    # the ball image
+   
+
+    def add_third_image_label(self):
+        self.third_image_label = Label()
+        self.third_image_label.place(x=self.third_x_pos,
+                                    y=self.third_y_pos)
+        self.third_image_label.configure(image=self.third_image)
+
+    
+    def add_house_image_label(self):
+        self.house_image_label = Label()
+        self.house_image_label.place(rely=1.0, relx=1.0, x=0, y=0, anchor=SE)
+        self.house_image_label.configure(image=self.house_image)
+
+
+     
+     
+# the object
+if __name__ == "__main__":
+    gui = AnimatedGui()    
+    gui.mainloop() 
+
