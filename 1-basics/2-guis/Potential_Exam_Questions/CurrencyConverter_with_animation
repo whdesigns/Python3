@@ -1,0 +1,186 @@
+from tkinter import *
+from tkinter import messagebox
+
+class Gui(Tk):
+    # Initialise the Gui object
+    # Self = the function belongs to this name
+    # Pass = placeholder. Does nothing
+    def __init__(self):
+        super().__init__()
+
+        #Load Resources
+        self.third_image = PhotoImage(file="person.gif")
+        self.house_image = PhotoImage(file="house.gif")
+        #self.tick_image = PhotoImage(file="tick.gif")
+
+
+
+        # Set window attributes
+        self.title("Currency Converter")
+        self.configure(bg="#ffe8e8",
+                       height=400,
+                       width=500,
+                       pady=20,
+                       padx=20)
+
+
+
+        # set animation attributes
+        self.third_x_pos = 20
+        self.third_y_pos = 370
+        self.third_x_change = 40
+        self.num_ticks = 0
+        
+
+        # Add components
+        self.add_heading_label()
+        self.add_amount_label()
+        self.add_box1_entry()
+        self.add_from_label()
+        self.add_box2_entry()
+        self.add_to_label()
+        self.add_box3_entry()
+        self.add_cc_frame()
+        self.add_clearbtn_button()
+        self.add_convertbtn_button()
+        self.add_systeminfo_label()
+        self.add_third_image_label()
+        self.add_house_image_label()
+        
+        # start the timer
+        self.tick()
+
+#........................FUNCTIONS..........................#
+
+    def add_heading_label(self):
+        self.heading_label = Label()
+        self.heading_label.grid(row=0, column=2, columnspan=2)
+        self.heading_label.configure(font="Arial 24", bg="#ffe8e8", text="Currency Converter", padx=10, pady=20)
+
+    def add_amount_label(self):
+        self.amount_label = Label()
+        self.amount_label.grid(row=1, column=2, columnspan=2, sticky=W)
+        self.amount_label.configure(font="Arial 13", bg="#ffe8e8", text="Amount")
+
+
+    def add_box1_entry(self):
+        self.box1_entry = Entry()
+        self.box1_entry.grid(row=2, column=2, columnspan=2)
+        self.box1_entry.configure(font="Arial 13", bg="white", bd=3, relief="solid", width=50)
+       
+
+    def add_from_label(self):
+        self.from_label = Label()
+        self.from_label.grid(row=3, column=2, columnspan=2, sticky=W)
+        self.from_label.configure(font="Arial 13", bg="#ffe8e8", text="From") #image=self.tick_image)
+
+
+    def add_box2_entry(self):
+        self.box2_entry = Entry()
+        self.box2_entry.grid(row=4, column=2, columnspan=2)
+        self.box2_entry.configure(font="Arial 13", bg="white", bd=3, relief="solid", width=50)
+
+
+
+    def add_to_label(self):
+        self.to_label = Label()
+        self.to_label.grid(row=5, column=2, columnspan=2, sticky=W)
+        self.to_label.configure(font="Arial 13", bg="#ffe8e8", text="To")
+
+
+
+
+    def add_box3_entry(self):
+        self.box3_entry = Entry()
+        self.box3_entry.grid(row=6, column=2, columnspan=2)
+        self.box3_entry.configure(font="Arial 13", bg="white", bd=3, relief="solid", width=50)
+
+
+
+    def add_clearbtn_button(self):
+        self.clearbtn_button = Button(self.cc_frame)
+        self.clearbtn_button.grid(row=7, column=2, columnspan=1, padx=20, pady=20)
+        self.clearbtn_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="Clear", width=10)
+        self.clearbtn_button.bind("<ButtonRelease-1>", self.clearbtn_button_clicked)
+
+    def clearbtn_button_clicked(self, event):
+        self.systeminfo_label.configure(text="System Message Displayed Here")
+
+
+
+    def add_convertbtn_button(self):
+        self.convertbtn_button = Button(self.cc_frame)
+        self.convertbtn_button.grid(row=7, column=3, sticky=W, padx=20, pady=20)
+        self.convertbtn_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="Convert", width=10)
+        self.convertbtn_button.bind("<ButtonRelease-1>", self.convertbtn_button_clicked)
+        self.convertbtn_button.bind("<KeyRelease>", self.convertbtn_button_clicked)
+
+
+ 
+
+
+    def convertbtn_button_clicked(self, event):
+        self.systeminfo_label.configure(text="Converting...")
+        num_clicks = self.convertbtn_button.get()
+        messagebox.showinfo("Gui", "Euros")
+
+
+
+
+
+
+    def add_systeminfo_label(self):
+        self.systeminfo_label = Label()
+        self.systeminfo_label.grid(row=8, column=2, columnspan=2)
+        self.systeminfo_label.configure(font="Arial 13", bg="#fffbce", bd=3, relief="solid", text="System Message Displayed Here", width=50, height=5)
+        
+        
+#..........................FRAMES BELOW..........................#
+    def add_cc_frame(self):
+        self.cc_frame = Frame()
+        self.cc_frame.grid(row=7, column=2, columnspan=2)
+        self.cc_frame.configure(bg="#ffe8e8")
+
+
+
+
+    def tick(self):
+        self.third_x_pos = self.third_x_pos + self.third_x_change 
+        self.third_image_label.place(x=self.third_x_pos, 
+                                    y=self.third_y_pos)
+
+        #right
+        if self.third_x_pos <= 0:
+            self.third_x_change = -self.third_x_change
+
+
+        #left
+        if self.third_x_pos >= 455:
+            self.third_x_change = -self.third_x_change
+
+
+        self.after(100, self.tick)
+        
+
+    # the ball image
+   
+
+    def add_third_image_label(self):
+        self.third_image_label = Label()
+        self.third_image_label.place(x=self.third_x_pos,
+                                    y=self.third_y_pos)
+        self.third_image_label.configure(image=self.third_image)
+
+    
+    def add_house_image_label(self):
+        self.house_image_label = Label()
+        self.house_image_label.place(x=self.third_y_pos, y=self.third_y_pos)
+        self.house_image_label.configure(image=self.house_image)
+
+
+    
+
+# Create an object of the Gui class when this module is executed
+if (__name__ == "__main__"):
+    gui = Gui()
+    gui.mainloop()
