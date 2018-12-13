@@ -1,0 +1,247 @@
+from tkinter import *
+from tkinter import messagebox
+from tkinter import ttk
+
+class Gui(Tk):
+    # Initialise the Gui object
+    # Self = the function belongs to this name
+    # Pass = placeholder. Does nothing
+    def __init__(self):
+        super().__init__()
+
+    
+        # Set window attributes
+        self.title("Calculator")
+        self.configure(bg="#ffe8e8",
+                       height=400,
+                       width=500,
+                       pady=20,
+                       padx=20)
+
+
+        # Add components
+        self.add_heading_label()
+        self.add_box1_entry()
+        self.add_cc_frame()
+        self.add_clearbtn_button()
+        self.add_convertbtn_button()
+        self.add_butt3_button()
+        self.add_clearbtn2_button()
+        self.add_convertbtn2_button()
+        self.add_butt4_button()
+        self.add_clearbtn3_button()
+        self.add_convertbtn3_button()
+        self.add_butt5_button()
+        self.add_butt6_button()        
+        self.add_lastbutt1_button()
+        self.add_lastbutt2_button()
+        self.add_lastbutt3_button()
+        self.add_butt6_button()
+        self.add_butt7_button()
+        self.add_butt8_button()
+        self.add_butt9_button()
+        self.add_butt10_button()
+        self.add_butt11_button()
+        self.add_butt12_button()
+        self.add_butt13_button()
+
+
+
+#...........................................FUNCTIONS.................................................#
+
+    def add_heading_label(self):
+        self.heading_label = Label()
+        self.heading_label.grid(row=0, column=2, columnspan=2)
+        self.heading_label.configure(font="Arial 24", bg="#ffe8e8", text="Calculator", padx=10, pady=20)
+
+
+    def add_box1_entry(self):
+        self.box1_entry = Entry()
+        self.box1_entry.grid(row=2, column=2, columnspan=2)
+        self.box1_entry.configure(font="Arial 13", bg="white", bd=3, relief="solid", width=29)
+
+   
+
+#.............................................BUTTONS......................................................
+
+
+
+        
+
+
+ #ROW 1 OF BUTTONS!.........................................................................................
+
+    def add_clearbtn_button(self):
+        self.clearbtn_button = Button(self.cc_frame)
+        self.clearbtn_button.grid(row=3, column=2, columnspan=1, padx=10, pady=10)
+        self.clearbtn_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="1", width=10)
+ 
+
+    def add_convertbtn_button(self):
+        self.convertbtn_button = Button(self.cc_frame)
+        self.convertbtn_button.grid(row=3, column=3, sticky=W, padx=10, pady=10)
+        self.convertbtn_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="2", width=10)
+
+    def add_butt3_button(self):
+        self.butt3_button = Button(self.cc_frame)
+        self.butt3_button.grid(row=3, column=4, sticky=W, padx=10, pady=10)
+        self.butt3_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="3", width=10)
+
+    def add_lastbutt1_button(self):
+        self.lastbutt1_button = Button(self.cc_frame)
+        self.lastbutt1_button.grid(row=3, column=5, sticky=W, padx=10, pady=10)
+        self.lastbutt1_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="+", width=10)
+
+#END OF ROW 1 OF BUTTONS!.................................................................................
+
+        
+
+
+
+
+
+#ROW 2 OF BUTTONS!......................................................................................
+
+    def add_clearbtn2_button(self):
+        self.clearbtn2_button = Button(self.cc_frame)
+        self.clearbtn2_button.grid(row=4, column=2, columnspan=1, padx=10, pady=10)
+        self.clearbtn2_button.configure(font="Arial 10", bd=3, relief="solid", bg="Red", text="4", width=10)
+ 
+
+    def add_convertbtn2_button(self):
+        self.convertbtn2_button = Button(self.cc_frame)
+        self.convertbtn2_button.grid(row=4, column=3, sticky=W, padx=10, pady=10)
+        self.convertbtn2_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="5", width=10)
+
+    def add_butt4_button(self):
+        self.butt4_button = Button(self.cc_frame)
+        self.butt4_button.grid(row=4, column=4, sticky=W, padx=10, pady=10)
+        self.butt4_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="6", width=10)
+
+    def add_lastbutt2_button(self):
+        self.lastbutt2_button = Button(self.cc_frame)
+        self.lastbutt2_button.grid(row=4, column=5, sticky=W, padx=10, pady=10)
+        self.lastbutt2_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="-", width=10)
+
+#END OF ROW 2 OF BUTTONS!..................................................................................
+
+
+
+
+
+        
+
+#ROW 3 OF BUTTONS!.........................................................................................
+        
+
+    def add_clearbtn3_button(self):
+        self.clearbtn3_button = Button(self.cc_frame)
+        self.clearbtn3_button.grid(row=5, column=2, columnspan=1, padx=10, pady=10)
+        self.clearbtn3_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="7", width=10)
+ 
+
+    def add_convertbtn3_button(self):
+        self.convertbtn3_button = Button(self.cc_frame)
+        self.convertbtn3_button.grid(row=5, column=3, sticky=W, padx=10, pady=10)
+        self.convertbtn3_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="8", width=10)
+
+    def add_butt5_button(self):
+        self.butt5_button = Button(self.cc_frame)
+        self.butt5_button.grid(row=5, column=4, sticky=W, padx=10, pady=10)
+        self.butt5_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="9", width=10)
+
+    def add_lastbutt3_button(self):
+        self.lastbutt3_button = Button(self.cc_frame)
+        self.lastbutt3_button.grid(row=5, column=5, sticky=W, padx=10, pady=10)
+        self.lastbutt3_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="*", width=10)
+
+#END OF ROW 3 OF BUTTONS!.................................................................................
+
+
+
+
+
+
+
+#ROW 4 OF BUTTONS!.......................................................................................
+
+    def add_butt6_button(self):
+        self.butt6_button = Button(self.cc_frame)
+        self.butt6_button.grid(row=6, column=2, sticky=W, padx=10, pady=10)
+        self.butt6_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="0", width=10)
+ 
+
+    def add_butt7_button(self):
+        self.butt7_button = Button(self.cc_frame)
+        self.butt7_button.grid(row=6, column=3, sticky=W, padx=10, pady=10)
+        self.butt7_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text=".", width=10)
+
+    
+    def add_butt8_button(self):
+        self.butt8_button = Button(self.cc_frame)
+        self.butt8_button.grid(row=6, column=4, sticky=W, padx=10, pady=10)
+        self.butt8_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="+/-", width=10)
+
+    def add_butt9_button(self):
+        self.butt9_button = Button(self.cc_frame)
+        self.butt9_button.grid(row=6, column=5, sticky=W, padx=10, pady=10)
+        self.butt9_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="/", width=10)
+
+
+#END OF ROW 4 OF BUTTONS!..................................................................................
+
+
+
+
+
+
+#ROW 5 OF BUTTONS!.......................................................................................
+        
+    def add_butt10_button(self):
+        self.butt10_button = Button(self.cc_frame)
+        self.butt10_button.grid(row=7, column=2, sticky=W, padx=10, pady=10)
+        self.butt10_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="OFF", width=10)
+ 
+
+    def add_butt11_button(self):
+        self.butt11_button = Button(self.cc_frame)
+        self.butt11_button.grid(row=7, column=3, sticky=W, padx=10, pady=10)
+        self.butt11_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="C", width=10)
+
+    
+    def add_butt12_button(self):
+        self.butt12_button = Button(self.cc_frame)
+        self.butt12_button.grid(row=7, column=4, sticky=W, padx=10, pady=10)
+        self.butt12_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="CE", width=10)
+
+    def add_butt13_button(self):
+        self.butt13_button = Button(self.cc_frame)
+        self.butt13_button.grid(row=7, column=5, sticky=W, padx=10, pady=10)
+        self.butt13_button.configure(font="Arial 10", bd=3, relief="solid", bg="white", text="=", width=10)
+        
+        self.butt13_button.bind("<ButtonRelease-1>", self.butt13_button_clicked)
+        
+ 
+    def butt13_button_clicked(self, event):
+        num_clicks = self.box1_entry.get()
+        messagebox.showinfo("Gui", "Fingers Crossed!")
+
+ #END OF ROW 5 OF BUTTONS!....................................................................................
+
+ 
+ 
+
+ 
+        
+#..........................FRAMES BELOW..........................#
+    def add_cc_frame(self):
+        self.cc_frame = Frame()
+        self.cc_frame.grid(row=3, column=2, columnspan=2)
+        self.cc_frame.configure(bg="#ffe8e8")
+
+        
+
+# Create an object of the Gui class when this module is executed
+if (__name__ == "__main__"):
+    gui = Gui()
+    gui.mainloop()
